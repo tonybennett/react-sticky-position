@@ -4,9 +4,10 @@ var stickyPosition = require('sticky-position');
 module.exports = React.createClass({
 	getDefaultProps: function() {
 		return {
-			className: 'sticky',
+			className: 'position-sticky',
 			computeWidth: true,
 			tag: "div",
+			includePlaceholder: true,
 		};
 	},
 	componentDidMount: function() {
@@ -15,6 +16,7 @@ module.exports = React.createClass({
 			placeholder: this.refs.placeholder,
 			wrapper: this.refs.wrapper,
 			computeWidth: this.props.computeWidth,
+			includePlaceholder: this.props.includePlaceholder,
 		})
 	},
 	componentWillUnmount: function() {
