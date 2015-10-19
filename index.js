@@ -4,7 +4,8 @@ var stickyPosition = require('sticky-position');
 module.exports = React.createClass({
 	getDefaultProps: function() {
 		return {
-			className: 'position-sticky',
+			className: '',
+			defaultClassName: 'position-sticky ',
 			computeWidth: true,
 			tag: "div",
 			includePlaceholder: true,
@@ -23,7 +24,7 @@ module.exports = React.createClass({
 		this.sticky.destroy();
 	},
 	render: function() {
-		return React.createElement(this.props.tag, {ref: 'wrapper', className: this.props.className}, [
+		return React.createElement(this.props.tag, {ref: 'wrapper', className: this.props.defaultClassName + this.props.className}, [
 				React.createElement(this.props.tag, {ref: 'primary', key: 0}, this.props.children),
 				React.createElement(this.props.tag, {ref: 'placeholder', key: 1})
 		]);
